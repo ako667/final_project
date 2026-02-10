@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: cake-shop
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        scope: runtime
+      - key: JWT_SECRET
+        scope: runtime
+      - key: PORT
+        value: 3000
