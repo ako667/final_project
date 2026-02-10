@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню - SweetDelight</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-menu {
+      background: url('img/menu_bg.jpg') center/cover no-repeat;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    .hero-menu h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .btn-pink {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-pink:hover {
+      background-color: #e60073;
+    }
+    .modal-header {
+      background-color: #ff3399;
+      color: white;
+    }
+    .floating-cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff3399;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-light py-3 shadow-sm sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand fw-bold text-pink" href="index.html">SweetDelight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+    <li class="nav-item"><a href="index.html" class="nav-link active">Главная</a></li>
+    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+    <li class="nav-item"><a href="menu.html" class="active">Торты</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+    <li class="nav-item"><a href="cart.html" class="nav-link">Корзина</a></li>
+    <li class="nav-item"><a href="account.html" class="nav-link">Аккаунт</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-menu">
+  <h1>Наше сладкое меню</h1>
+</section>
+
+<main class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Попробуйте наши торты</h2>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <!-- Ванильный -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/vanilla.jpg" class="card-img-top" alt="Ванильный торт">
+          <div class="card-body">
+            <h5>Ванильный торт</h5>
+            <p>7990 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#vanillaModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Ванильный торт" data-price="7990">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Шоколадный -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/chocolate.jpg" class="card-img-top" alt="Шоколадный торт">
+          <div class="card-body">
+            <h5>Шоколадный торт</h5>
+            <p>8990 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#chocoModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Шоколадный торт" data-price="8990">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Фисташковый -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/pistachio.jpg" class="card-img-top" alt="Фисташковый торт">
+          <div class="card-body">
+            <h5>Фисташковый торт</h5>
+            <p>9990 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#pistachioModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Фисташковый торт" data-price="9990">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Вишневый -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/cherry.jpg" class="card-img-top" alt="Вишневый торт">
+          <div class="card-body">
+            <h5>Вишнёвый торт</h5>
+            <p>9490 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#cherryModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Вишнёвый торт" data-price="9490">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Малиновый -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/raspberry.jpg" class="card-img-top" alt="Малиновый торт">
+          <div class="card-body">
+            <h5>Малиновый торт</h5>
+            <p>9590 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#raspModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Малиновый торт" data-price="9590">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Бенто -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/bento.jpg" class="card-img-top" alt="Бенто торт">
+          <div class="card-body">
+            <h5>Бенто торт</h5>
+            <p>4990 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#bentoModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Бенто торт" data-price="4990">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Свадебный -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/wedding.jpg" class="card-img-top" alt="Свадебный торт">
+          <div class="card-body">
+            <h5>Свадебный торт</h5>
+            <p>14990 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#weddingModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Свадебный торт" data-price="14990">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Лабубу -->
+      <div class="col">
+        <div class="card text-center h-100">
+          <img src="img/labubu.jpg" class="card-img-top" alt="Лабубу торт">
+          <div class="card-body">
+            <h5>Лабубу торт</h5>
+            <p>10590 тг</p>
+            <button class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#lavModal">Подробнее</button>
+            <button class="btn btn-outline-dark add-to-cart" data-name="Лабубу торт" data-price="10590">В корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Floating Cart Icon -->
+<div class="floating-cart" id="cartIcon">🛒</div>
+
+<!-- Модальные окна для всех тортов -->
+<div class="modal fade" id="vanillaModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Ванильный торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/vanilla.jpg" class="img-fluid mb-3"><p>Классический ванильный бисквит со сливочным кремом. Диаметр: 22 см. Цена: 7990 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="chocoModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Шоколадный торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/chocolate.jpg" class="img-fluid mb-3"><p>Насыщенный шоколадный бисквит с нежным ганашем из бельгийского шоколада. Диаметр: 22 см. Цена: 8990 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="pistachioModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Фисташковый торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/pistachio.jpg" class="img-fluid mb-3"><p>Лёгкий фисташковый бисквит с кремом из натуральной пасты. Диаметр: 22 см. Цена: 9990 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="cherryModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Вишнёвый торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/cherry.jpg" class="img-fluid mb-3"><p>Вишнёвый бисквит с ароматным кремом и сочной прослойкой из ягод. Диаметр: 22 см. Цена: 9490 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="raspModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Малиновый торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/raspberry.jpg" class="img-fluid mb-3"><p>Освежающий малиновый крем и бисквит с нотками лимона. Диаметр: 22 см. Цена: 9590 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="bentoModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Бенто торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/bento.jpg" class="img-fluid mb-3"><p>Мини-торт для одного или пары, идеально подходит для подарка. Диаметр: 12 см. Цена: 4990 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="weddingModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Свадебный торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/wedding.jpg" class="img-fluid mb-3"><p>Роскошный трёхъярусный торт с декором из мастики. Цена: 14990 тг.</p></div></div></div></div>
+
+<div class="modal fade" id="lavModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Лабубу торт</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><img src="img/labubu.jpg" class="img-fluid mb-3"><p>Креативный дизайн с фигуркой Лабубу и нежным ванильно-фруктовым кремом. Диаметр: 20 см. Цена: 10590 тг.</p></div></div></div></div>
+
+<footer class="mt-5">
+  <div class="container text-white text-center">
+    <p>📞 <a href="tel:+77714815183">+7 771 481 5183 (WhatsApp)</a></p>
+    <p>📸 <a href="https://instagram.com/sweet_delight" target="_blank">@sweet_delight</a></p>
+    <p>&copy; 2025 SweetDelight | Все права защищены</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  $(".add-to-cart").on("click", function() {
+    const name = $(this).data("name");
+    const price = parseInt($(this).data("price"));
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${name} добавлен в корзину!`);
+  });
+
+  $("#cartIcon").on("click", function() {
+    window.location.href = "cart.html";
+  });
+</script>
+</body>
+</html>

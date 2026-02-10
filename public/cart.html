@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина - SweetDelight</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-cart {
+      background: url('img/cart_bg.jpg') center/cover no-repeat;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff3399;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .hero-cart h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+    .cart-item {
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+    .btn-pink {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-pink:hover {
+      background-color: #e60073;
+    }
+    .empty-cart {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-light py-3 shadow-sm sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand fw-bold text-pink" href="index.html">SweetDelight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link">Торты</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+    <li class="nav-item"><a href="cart.html" class="active">Корзина</a></li>
+    <li class="nav-item"><a href="account.html" class="nav-link">Аккаунт</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-cart">
+  <h1>Ваша корзина</h1>
+</section>
+
+<main class="py-5">
+  <div class="container">
+    <div id="cartContainer"></div>
+    <div class="text-center mt-4">
+      <h4 id="totalPrice"></h4>
+      <button id="checkoutBtn" class="btn btn-pink mt-3">Оформить заказ</button>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-5">
+  <div class="container text-white text-center">
+    <p>📞 <a href="tel:+77714815183">+7 771 481 5183 (WhatsApp)</a></p>
+    <p>📸 <a href="https://instagram.com/sweet_delight" target="_blank">@sweet_delight</a></p>
+    <p>&copy; 2025 SweetDelight | Все права защищены</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  const cartContainer = $("#cartContainer");
+  const totalPriceEl = $("#totalPrice");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function renderCart() {
+    cartContainer.empty();
+    if (cart.length === 0) {
+      cartContainer.html('<p class="empty-cart">Ваша корзина пуста 🛒</p>');
+      totalPriceEl.text('');
+      $("#checkoutBtn").hide();
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price;
+      const itemHtml = `
+        <div class="cart-item d-flex justify-content-between align-items-center">
+          <div><strong>${item.name}</strong></div>
+          <div>${item.price} тг</div>
+          <button class="btn btn-sm btn-outline-danger remove-item" data-index="${index}">Удалить</button>
+        </div>
+      `;
+      cartContainer.append(itemHtml);
+    });
+
+    totalPriceEl.text(`Итого: ${total} тг`);
+    $("#checkoutBtn").show();
+  }
+
+  $(document).on("click", ".remove-item", function() {
+    const index = $(this).data("index");
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  });
+
+  $("#checkoutBtn").on("click", function() {
+    if (cart.length > 0) {
+      alert("Спасибо за заказ! Мы свяжемся с вами для подтверждения.");
+      localStorage.removeItem("cart");
+      cart = [];
+      renderCart();
+    }
+  });
+
+  renderCart();
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cake Shop Admin</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #ffe6f0;
+      padding: 20px;
+    }
+    h1 {
+      color: #e91e63;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
+    .cake-item {
+      display: flex;
+      align-items: center;
+      background: #ffd6e8;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .cake-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-right: 12px;
+    }
+    .cake-info {
+      flex-grow: 1;
+    }
+    .cake-info strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+    .cake-info small {
+      display: block;
+      color: #555;
+    }
+    .btn-group button {
+      margin-left: 8px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-edit {
+      background: #f48fb1;
+      color: #38003c;
+    }
+    .btn-delete {
+      background: #ef5350;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍰 Cake Shop</h1>
+
+  <h2>Add a Cake</h2>
+  <input id="cake-name" type="text" placeholder="Cake Name" />
+  <input id="cake-price" type="number" placeholder="Price" />
+  <input id="cake-description" type="text" placeholder="Description" />
+  <input id="cake-image" type="text" placeholder="Image URL" />
+  <button id="add-cake">Add Cake</button>
+
+  <h2>Available Cakes</h2>
+  <div id="cake-list"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

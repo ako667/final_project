@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас - SweetDelight</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-about {
+      background: url('img/about_bg.jpg') center/cover no-repeat;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff3399;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .hero-about h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+    .team-card img {
+      border-radius: 15px;
+      transition: all 0.4s ease;
+    }
+    .team-card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.15);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+    .carousel-item {
+      text-align: center;
+      padding: 30px;
+    }
+    .btn-pink {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+    }
+    .btn-pink:hover {
+      background-color: #e60073;
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-light py-3 shadow-sm sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand fw-bold text-pink" href="index.html">SweetDelight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+    <li class="nav-item"><a href="about.html" class="active">О нас</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link">Торты</a></li>
+    <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+    <li class="nav-item"><a href="cart.html" class="nav-link">Корзина</a></li>
+    <li class="nav-item"><a href="account.html" class="nav-link">Аккаунт</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-about">
+  <h1>О нашей сладкой кондитерской</h1>
+</section>
+
+<main class="py-5">
+  <div class="container">
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 mb-3">
+        <img src="img/cake2.jpg" alt="О нас" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <p>
+          <strong>SweetDelight</strong> — это уютная кондитерская, где каждый десерт готовится с любовью.  
+          Мы начали свой путь в 2020 году и уже успели завоевать сердца сладкоежек нашего города.  
+          В нашем меню вы найдете торты, пирожные, капкейки и многое другое, созданное вручную нашими талантливыми кондитерами.
+        </p>
+        <p>
+          Мы используем только свежие и натуральные ингредиенты, без искусственных добавок.  
+          Каждый заказ для нас — это возможность подарить радость и сладкие эмоции 💕
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center mb-4">
+      <h2>Наша команда</h2>
+      <p class="text-muted">
+        Мы — команда профессиональных кондитеров, создающих уникальные десерты с любовью и вниманием к каждой детали.  
+        С 2019 года мы радуем наших клиентов свежими и изысканными тортами, которые делают любой день особенным.
+      </p>
+    </div>
+
+<div class="row align-items-center my-5">
+  <!-- Текст слева -->
+  <div class="col-md-6">
+    <h3>Наши кондитеры — профессионалы своего дела</h3>
+    <p>
+      Мы всегда совершенствуем свои навыки, проходим повышение квалификации и следим за последними трендами в мире кондитерского искусства.  
+      Каждый торт, который мы создаём, — это результат мастерства, любви к делу и стремления радовать наших клиентов.
+    </p>
+  </div>
+
+  <!-- Карусель справа -->
+  <div class="col-md-6">
+    <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+
+        <div class="carousel-item active">
+          <div class="team-card d-inline-block">
+            <img src="img/team1.jpg" class="img-fluid rounded-circle mb-2" style="width:150px; height:200px;" alt="Алина">
+            <h6>Алина</h6>
+            <small>Главный кондитер</small>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="team-card d-inline-block">
+            <img src="img/team2.jpg" class="img-fluid rounded-circle mb-2" style="width:150px; height:200px;" alt="Диана">
+            <h6>Диана</h6>
+            <small>Дизайнер десертов</small>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="team-card d-inline-block">
+            <img src="img/team3.jpg" class="img-fluid rounded-circle mb-2" style="width:150px; height:200px;" alt="Марина">
+            <h6>Марина</h6>
+            <small>Мастер украшений</small>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="mt-5">
+  <div class="container text-white text-center">
+    <p>📞 <a href="tel:+77714815183">+7 771 481 5183 (WhatsApp)</a></p>
+    <p>📸 <a href="https://instagram.com/sweet_delight" target="_blank">@sweet_delight</a></p>
+    <p>&copy; 2025 SweetDelight | Все права защищены</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

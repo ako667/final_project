@@ -1,0 +1,114 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffe6f5;
+  color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: #ffccf0 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff3399;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link.active {
+  color: #ff3399 !important;
+}
+
+.nav-link:hover {
+  color: #ff3399 !important;
+}
+
+h2 {
+  color: #ff3399;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background-color: #ff3399 !important;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #e60073 !important;
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #ff3399;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+input, textarea {
+  border-radius: 5px;
+  border: 1px solid #ff99cc;
+}
+
+form button {
+  border-radius: 5px;
+}
+
+/* Навбар - горизонтальное меню */
+.navbar {
+  list-style: none;       /* Убирает точки */
+  padding: 0;
+  margin: 0;
+  display: flex;          /* Выстроить пункты горизонтально */
+  gap: 20px;              /* Отступ между пунктами меню */
+  align-items: center;
+  background-color: #fff; /* Цвет фона (можно поменять) */
+  font-family: Arial, sans-serif;
+}
+
+/* Ссылки меню */
+.navbar li a {
+  text-decoration: none;
+  color: #e91e63;         /* Ярко-розовый цвет текста */
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* При наведении и активном пункте меню */
+.navbar li a:hover,
+.navbar li a.active {
+  background-color: #e91e63;
+  color: white;
+}
+

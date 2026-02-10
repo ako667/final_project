@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Аккаунт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+      <ul class="navbar">
+        <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+        <li class="nav-item"><a href="menu.html" class="nav-link">Торты</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Контакты</a></li>
+        <li class="nav-item"><a href="cart.html" class="nav-link">Корзина</a></li>
+        <li class="nav-item"><a href="account.html" class="active">Аккаунт</a></li>
+      </ul>
+    </nav>
+
+    <h1>Аккаунт</h1>
+
+    <div id="tabs">
+        <button id="register-tab">Регистрация</button>
+        <button id="login-tab">Вход</button>
+    </div>
+
+    <div id="register-form" class="form-container">
+        <h2>Регистрация</h2>
+        <form id="register">
+            <input type="text" id="reg-name" placeholder="Имя" required>
+            <input type="email" id="reg-email" placeholder="Email" required>
+            <input type="password" id="reg-password" placeholder="Пароль" required>
+            <input type="password" id="reg-password2" placeholder="Повторите пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <p id="reg-error" style="color:red"></p>
+    </div>
+
+    <div id="login-form" class="form-container" style="display:none">
+        <h2>Вход</h2>
+        <form id="login">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+        <p id="login-error" style="color:red"></p>
+    </div>
+
+    <script src="js/account.js"></script>
+</body>
+</html>

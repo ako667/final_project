@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты - SweetDelight</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-contact {
+      background: url('img/contact_bg.jpg') center/cover no-repeat;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff3399;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    }
+    .hero-contact h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+    .btn-pink {
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-pink:hover {
+      background-color: #e60073;
+    }
+    .form-control:focus {
+      border-color: #ff3399;
+      box-shadow: 0 0 5px rgba(255, 51, 153, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-light py-3 shadow-sm sticky-top">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand fw-bold text-pink" href="index.html">SweetDelight</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+    <li class="nav-item"><a href="index.html" class="nav-link">Главная</a></li>
+    <li class="nav-item"><a href="about.html" class="nav-link">О нас</a></li>
+    <li class="nav-item"><a href="menu.html" class="nav-link">Торты</a></li>
+    <li class="nav-item"><a href="contact.html" class="active">Контакты</a></li>
+    <li class="nav-item"><a href="cart.html" class="nav-link">Корзина</a></li>
+    <li class="nav-item"><a href="account.html" class="nav-link">Аккаунт</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-contact">
+  <h1>Свяжитесь с нами</h1>
+</section>
+
+<main class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="text-center mb-4">Мы будем рады вашим сообщениям 🍰</h3>
+
+        <form id="contactForm" class="p-4 border rounded bg-light shadow-sm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" class="form-control" id="name" placeholder="Введите имя">
+            <div class="invalid-feedback">Введите имя (минимум 2 символа).</div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Введите email">
+            <div class="invalid-feedback">Введите корректный email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Сообщение</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Ваше сообщение..."></textarea>
+            <div class="invalid-feedback">Сообщение не может быть пустым.</div>
+          </div>
+          <button type="submit" class="btn btn-pink w-100">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-5">
+  <div class="container text-white text-center">
+    <p>📞 <a href="tel:+77714815183">+7 771 481 5183 (WhatsApp)</a></p>
+    <p>📸 <a href="https://instagram.com/sweet_delight" target="_blank">@sweet_delight</a></p>
+    <p>&copy; 2025 SweetDelight | Все права защищены</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $("#contactForm").on("submit", function(e) {
+    e.preventDefault();
+    let name = $("#name").val().trim();
+    let email = $("#email").val().trim();
+    let message = $("#message").val().trim();
+    let isValid = true;
+
+    $(".form-control").removeClass("is-invalid");
+
+    if (name.length < 2) {
+      $("#name").addClass("is-invalid");
+      isValid = false;
+    }
+
+    if (!email.match(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/)) {
+      $("#email").addClass("is-invalid");
+      isValid = false;
+    }
+
+    if (message.length === 0) {
+      $("#message").addClass("is-invalid");
+      isValid = false;
+    }
+
+    if (isValid) {
+      let contactMessages = JSON.parse(localStorage.getItem("messages")) || [];
+      contactMessages.push({ name, email, message, date: new Date().toLocaleString() });
+      localStorage.setItem("messages", JSON.stringify(contactMessages));
+      alert("Спасибо за сообщение! Мы ответим вам в ближайшее время 💕");
+      $("#contactForm")[0].reset();
+    }
+  });
+</script>
+</body>
+</html>
