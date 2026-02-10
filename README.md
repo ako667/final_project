@@ -456,7 +456,11 @@ taskkill /PID <PID> /F
 - **Form Validation**: Server-side validation on all endpoints
 
 ---
-
+- ![Landing page — hero banner and main navigation](./Снимок%20экрана%202026-02-10%20182430.png)
+- ![Account page — registration and login tabs](./Снимок%20экрана%202026-02-11%20025402.png)
+- ![Success alert — login/registration flow](./Снимок%20экрана%202026-02-11%20025415.png)
+- ![Admin dashboard — add and manage cakes](./Снимок%20экрана%202026-02-11%20025428.png)
+- ![Orders list — customer orders and statuses](./Снимок%20экрана%202026-02-11%20025442.png)
 ## 🎯 What This Project Demonstrates
 
 This project is a complete example of:
